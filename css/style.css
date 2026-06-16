@@ -1025,43 +1025,6 @@ body::after {
   }
 }
 
-@media (max-width: 600px) {
-  .servicos__grid,
-  .pecas__grid,
-  .ofertas__grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .service-card {
-    padding: var(--spacing-md);
-  }
-
-  .service-card h3 {
-    font-size: 1rem;
-  }
-
-  .service-card p {
-    font-size: 0.9rem;
-  }
-
-  .pecas__content {
-    grid-template-columns: 1fr;
-  }
-
-  .pecas__card {
-    padding: var(--spacing-lg) var(--spacing-md);
-  }
-
-  .pecas__card-title {
-    font-size: 1rem;
-  }
-
-  .pecas__card-description {
-    font-size: 0.9rem;
-  }
-}
-
 @media (max-width: 480px) {
   .service-card {
     padding: var(--spacing-md);
@@ -2834,6 +2797,44 @@ body::after {
 
   section {
     padding: 32px 0;
+  }
+}
+
+/* RESPONSIVIDADE - 600px E MENOR (DEVE VIR APÓS 768px) */
+@media (max-width: 600px) {
+  .servicos__grid,
+  .pecas__grid,
+  .ofertas__grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .service-card {
+    padding: var(--spacing-md);
+  }
+
+  .service-card h3 {
+    font-size: 1rem;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+  }
+
+  .pecas__content {
+    grid-template-columns: 1fr;
+  }
+
+  .pecas__card {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .pecas__card-title {
+    font-size: 1rem;
+  }
+
+  .pecas__card-description {
+    font-size: 0.9rem;
   }
 }
 
