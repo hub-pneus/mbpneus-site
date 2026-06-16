@@ -612,8 +612,6 @@ class WhatsAppPulse {
   init() {
     if (!this.whatsapp) return;
 
-    this.whatsapp.style.position = 'relative';
-
     const pulse1 = document.createElement('div');
     pulse1.style.cssText = `
       position: absolute;
