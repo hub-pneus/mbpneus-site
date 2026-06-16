@@ -1007,19 +1007,31 @@ body::after {
   padding-top: var(--spacing-xl);
 }
 
-/* RESPONSIVIDADE - SERVIÇOS */
+/* RESPONSIVIDADE - PADRÃO ÚNICO PARA TODOS OS GRIDS */
 @media (max-width: 1280px) {
-  .servicos__grid {
+  .servicos__grid,
+  .pecas__grid,
+  .ofertas__grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 768px) {
-  .servicos__grid {
+@media (max-width: 1024px) {
+  .servicos__grid,
+  .pecas__grid,
+  .ofertas__grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
 }
+
+@media (max-width: 600px) {
+  .servicos__grid,
+  .pecas__grid,
+  .ofertas__grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 
   .service-card {
     padding: var(--spacing-md);
@@ -1033,14 +1045,8 @@ body::after {
     font-size: 0.9rem;
   }
 
-  /* RESPONSIVIDADE - PEÇAS */
   .pecas__content {
     grid-template-columns: 1fr;
-  }
-
-  .pecas__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-lg);
   }
 
   .pecas__card {
@@ -1057,11 +1063,6 @@ body::after {
 }
 
 @media (max-width: 480px) {
-  .servicos__grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
   .service-card {
     padding: var(--spacing-md);
   }
@@ -1081,11 +1082,6 @@ body::after {
   }
 
   /* RESPONSIVIDADE - PEÇAS MOBILE */
-  .pecas__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
   .pecas__card {
     padding: 12px;
     text-align: center;
@@ -1282,8 +1278,9 @@ body::after {
 .pecas__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-bottom: var(--spacing-2xl);
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 0;
 }
 
 .pecas__card {
@@ -1397,16 +1394,8 @@ body::after {
 }
 
 /* ==========================================
-   GRID LAYOUTS
+   GRID LAYOUTS - REMOVIDO (usando grid específico de cada seção)
    ========================================== */
-.pecas__grid,
-.pneus__grid,
-.diferenciais__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--spacing-2xl);
-  margin-bottom: var(--spacing-2xl);
-}
 
 /* ==========================================
    LOCALIZAÇÃO
@@ -2251,9 +2240,10 @@ body::after {
 
 .ofertas__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-bottom: var(--spacing-2xl);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 0;
 }
 
 .oferta__card {
@@ -2401,54 +2391,12 @@ body::after {
 }
 
 /* ==========================================
-   RESPONSIVE - OFERTAS
+   RESPONSIVE - OFERTAS (grid controlado pelas regras padrão acima)
    ========================================== */
-@media (max-width: 1280px) {
-  .ofertas__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .ofertas__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  .oferta__card {
-    padding: var(--spacing-md);
-  }
-
-  .oferta__image {
-    height: 140px;
-  }
-
-  .oferta__image svg {
-    width: 100px;
-    height: 100px;
-  }
-
-  .oferta__title {
-    font-size: 1.1rem;
-  }
-
-  .oferta__price-value {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .ofertas__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
+@media (max-width: 600px) {
   .oferta__card {
     padding: 12px;
     min-height: auto;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
   }
 
   .oferta__image {
@@ -2464,33 +2412,27 @@ body::after {
   .oferta__title {
     font-size: 0.9rem;
     margin-bottom: 4px;
-    text-align: center;
   }
 
   .oferta__price {
     margin-bottom: 4px;
-    text-align: center;
   }
 
   .oferta__price-label {
     font-size: 0.65rem;
-    text-align: center;
   }
 
   .oferta__price-value {
     font-size: 1.1rem;
-    text-align: center;
   }
 
   .oferta__price-condition {
     font-size: 0.7rem;
-    text-align: center;
   }
 
   .oferta__note {
     font-size: 0.7rem;
     margin-bottom: 8px;
-    text-align: center;
   }
 
   .oferta__button {
@@ -2499,6 +2441,10 @@ body::after {
     font-size: 0.85rem;
     padding: 8px 12px;
   }
+}
+
+@media (max-width: 480px) {
+  /* Respeitando grid de 1 coluna em 600px */
 }
 
 /* ==========================================
