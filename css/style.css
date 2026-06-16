@@ -1082,7 +1082,7 @@ body::after {
 
   /* RESPONSIVIDADE - PEÇAS MOBILE */
   .pecas__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
 
@@ -1094,35 +1094,37 @@ body::after {
   }
 
   .pecas__card-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 12px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 8px;
   }
 
   .pecas__card-icon::before {
-    width: 50px;
-    height: 50px;
+    width: 42px;
+    height: 42px;
     border: 2px solid #222;
   }
 
   .pecas__card-icon::after {
-    width: 32px;
-    height: 32px;
-    border: 1.5px solid #444;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #444;
   }
 
   .pecas__card-icon svg {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
   }
 
   .pecas__card-title {
-    font-size: 1rem;
-    margin-bottom: 6px;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    text-align: center;
   }
 
   .pecas__card-description {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
+    text-align: center;
   }
 
   .pecas__action {
@@ -1294,6 +1296,7 @@ body::after {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   transition: var(--transition-quick);
 }
 
@@ -2261,6 +2264,8 @@ body::after {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   min-height: 500px;
   transition: var(--transition-quick);
   position: relative;
@@ -2434,50 +2439,65 @@ body::after {
 
 @media (max-width: 480px) {
   .ofertas__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
 
   .oferta__card {
-    padding: var(--spacing-md);
+    padding: 12px;
     min-height: auto;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .oferta__image {
-    height: 140px;
-    margin-bottom: 12px;
+    height: 100px;
+    margin-bottom: 8px;
   }
 
   .oferta__image svg {
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
   }
 
   .oferta__title {
-    font-size: 1rem;
-    margin-bottom: 8px;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    text-align: center;
   }
 
   .oferta__price {
-    margin-bottom: 8px;
+    margin-bottom: 4px;
+    text-align: center;
   }
 
   .oferta__price-label {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
+    text-align: center;
   }
 
   .oferta__price-value {
-    font-size: 1.35rem;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .oferta__price-condition {
+    font-size: 0.7rem;
+    text-align: center;
   }
 
   .oferta__note {
-    font-size: 0.8rem;
-    margin-bottom: 12px;
+    font-size: 0.7rem;
+    margin-bottom: 8px;
+    text-align: center;
   }
 
   .oferta__button {
-    margin-top: 12px;
+    margin-top: 8px;
+    width: 100%;
+    font-size: 0.85rem;
+    padding: 8px 12px;
   }
 }
 
