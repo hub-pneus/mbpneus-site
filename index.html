@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MB Pneus - Centro Automotivo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- EXIT INTENT POP-UP -->
+  <div id="exitIntentOverlay" class="exit-intent-overlay">
+    <div class="exit-intent-modal">
+      <div class="exit-intent-header">
+        <span class="exit-intent-icon">⚠️</span>
+      </div>
+      <div class="exit-intent-content">
+        <h2 class="exit-intent-title">Espera! Não vá embora ainda...</h2>
+        <p class="exit-intent-subtitle">Antes de sair, fale com a gente no WhatsApp e receba um orçamento exclusivo agora mesmo!</p>
+        <a href="https://wa.me/5531999304426?text=Olá!%20Vi%20a%20promoção%20de%20pneus%20no%20site%20e%20gostaria%20de%20um%20orçamento!" class="exit-intent-button" target="_blank" rel="noopener noreferrer">
+          💬 Falar no WhatsApp agora
+        </a>
+        <button class="exit-intent-close">Não, obrigado</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a href="https://wa.me/5531999304426?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp" title="Falar no WhatsApp">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.869 1.171c-1.519.754-2.753 1.787-3.68 3.176C3.87 11.57 3.5 13.205 3.5 14.935c0 1.31.198 2.504.604 3.558l-1.3 4.33 4.595-1.304c1.007.535 2.162.837 3.201.837 4.886 0 8.864-3.978 8.864-8.864 0-2.367-.92-4.594-2.586-6.269-1.667-1.675-3.888-2.594-6.288-2.594z"/>
+    </svg>
+  </a>
+
+  <!-- HEADER FIXO -->
+  <header class="header" id="header">
+    <div class="header__content">
+      <div class="header__logo">
+        <a href="#hero">MB Pneus</a>
+      </div>
+
+      <button class="header__menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="header__nav" id="headerNav">
+        <ul class="nav__list">
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#pecas">Peças</a></li>
+          <li><a href="#pneus-nacionais">Pneus</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#localizacao">Localização</a></li>
+        </ul>
+      </nav>
+
+      <a href="https://wa.me/5531999304426" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.869 1.171c-1.519.754-2.753 1.787-3.68 3.176C3.87 11.57 3.5 13.205 3.5 14.935c0 1.31.198 2.504.604 3.558l-1.3 4.33 4.595-1.304c1.007.535 2.162.837 3.201.837 4.886 0 8.864-3.978 8.864-8.864 0-2.367-.92-4.594-2.586-6.269-1.667-1.675-3.888-2.594-6.288-2.594z"/>
+        </svg>
+        <span>Falar no WhatsApp</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO COM BANNER ROTATIVO -->
+  <section id="hero" class="hero">
+    <div class="hero__slider">
+      <!-- SLIDES -->
+      <div class="hero__slides-container">
+        <div class="hero__slide active">
+          <div class="hero__slide-background" style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);">
+            <div class="hero__slide-placeholder">
+              <p>Adicione seu banner aqui — tamanho recomendado: 1920x800px</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__slide">
+          <div class="hero__slide-background" style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);">
+            <div class="hero__slide-placeholder">
+              <p>Adicione seu banner aqui — tamanho recomendado: 1920x800px</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__slide">
+          <div class="hero__slide-background" style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);">
+            <div class="hero__slide-placeholder">
+              <p>Adicione seu banner aqui — tamanho recomendado: 1920x800px</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTROLES DE NAVEGAÇÃO -->
+      <button class="hero__arrow hero__arrow--prev" aria-label="Slide anterior">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <button class="hero__arrow hero__arrow--next" aria-label="Próximo slide">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+
+      <!-- INDICADORES DE PONTOS -->
+      <div class="hero__dots">
+        <button class="hero__dot active" aria-label="Ir para slide 1"></button>
+        <button class="hero__dot" aria-label="Ir para slide 2"></button>
+        <button class="hero__dot" aria-label="Ir para slide 3"></button>
+      </div>
+    </div>
+
+    <!-- BOTÃO DE AÇÃO -->
+    <div class="hero__action">
+      <a href="https://wa.me/5531999304426?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20veículo" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+        Solicitar Orçamento
+      </a>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS MECÂNICOS -->
+  <section id="servicos" class="servicos">
+    <div class="container">
+      <div class="servicos__header">
+        <h2 class="section-title">Nossos Principais Serviços</h2>
+        <p class="servicos__subtitle">Manutenção completa para o seu veículo, com transparência e garantia.</p>
+      </div>
+
+      <div class="servicos__grid">
+        <!-- 1. TROCA DE PEÇAS EM GERAL -->
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 12h8M12 8v8"></path>
+            </svg>
+          </div>
+          <h3>Troca de Peças em Geral</h3>
+          <p>Substituição de amortecedores, molas e buchas para estabilidade e conforto.</p>
+        </div>
+
+        <!-- 2. REVISÃO E MANUTENÇÃO DE FREIOS -->
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M12 6v6m0 0l-3-3m3 3l3-3"></path>
+            </svg>
+          </div>
+          <h3>Revisão e Manutenção de Freios</h3>
+          <p>Troca de pastilhas, discos e fluído de freio com peças de qualidade e garantia.</p>
+        </div>
+
+        <!-- 3. TROCA DE EMBREAGEM -->
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="6" width="18" height="12" rx="2"></rect>
+              <path d="M12 10v4m-3-1l6 0m-6 2l6 0"></path>
+            </svg>
+          </div>
+          <h3>Troca de Embreagem</h3>
+          <p>Restaure a potência e o conforto das trocas de marcha com manutenção especializada.</p>
+        </div>
+
+        <!-- 4. TROCA DE ÓLEO E FILTROS -->
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v8m0 4v8M6 8h12a2 2 0 012 2v0a2 2 0 01-2 2H6a2 2 0 01-2-2v0a2 2 0 012-2z"></path>
+              <circle cx="12" cy="18" r="1"></circle>
+            </svg>
+          </div>
+          <h3>Troca de Óleo e Filtros</h3>
+          <p>Manutenção preventiva essencial para preservar o motor e o desempenho do veículo.</p>
+        </div>
+
+        <!-- 5. TROCA DE PNEUS -->
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="9"></circle>
+              <circle cx="12" cy="12" r="6"></circle>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </div>
+          <h3>Troca de Pneus</h3>
+          <p>Pneus novos com serviço completo de montagem e descarte ecológico do usado.</p>
+        </div>
+
+        <!-- 6. GEOMETRIA COMPLETA -->
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 6h18M3 12h18M3 18h18"></path>
+              <path d="M9 3v18M15 3v18"></path>
+            </svg>
+          </div>
+          <h3>Geometria Completa</h3>
+          <p>Alinhamento, cambagem e caster com precisão para dirigibilidade e economia de pneus.</p>
+        </div>
+
+        <!-- 7. BALANCEAMENTO DE RODAS -->
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 2v20M2 12h20"></path>
+              <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
+            </svg>
+          </div>
+          <h3>Balanceamento de Rodas</h3>
+          <p>Elimine vibrações e prolongue a vida útil dos pneus e componentes da suspensão.</p>
+        </div>
+
+        <!-- 8. MONTAGEM E DESMONTAGEM DE PNEUS -->
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3v3m0 12v3M3 12h3m12 0h3"></path>
+              <circle cx="12" cy="12" r="8"></circle>
+              <path d="M12 8v8M8 12h8"></path>
+            </svg>
+          </div>
+          <h3>Montagem e Desmontagem de Pneus</h3>
+          <p>Serviço profissional com equipamentos modernos e assentamento correto do pneu.</p>
+        </div>
+
+        <!-- 9. TROCA E MANUTENÇÃO DE ESCAPAMENTO -->
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 12h12M8 8v8M16 8v8M12 4v16"></path>
+            </svg>
+          </div>
+          <h3>Troca e Manutenção de Escapamento</h3>
+          <p>Controle de ruído, emissões e fluxo de gases com peças da primeira linha.</p>
+        </div>
+
+        <!-- 10. TROCA DE BATERIA AUTOMOTIVA -->
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="5" y="6" width="14" height="12" rx="1"></rect>
+              <line x1="19" y1="10" x2="21" y2="10"></line>
+              <line x1="19" y1="14" x2="21" y2="14"></line>
+              <line x1="9" y1="12" x2="15" y2="12"></line>
+            </svg>
+          </div>
+          <h3>Troca de Bateria Automotiva</h3>
+          <p>Teste e substituição segura de baterias para evitar imprevistos na estrada.</p>
+        </div>
+
+        <!-- 11. LIMPEZA E MANUTENÇÃO DE INJEÇÃO ELETRÔNICA -->
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v10m0 4v6M6 8h12v8H6z"></path>
+              <circle cx="9" cy="12" r="1"></circle>
+              <circle cx="15" cy="12" r="1"></circle>
+            </svg>
+          </div>
+          <h3>Limpeza e Manutenção de Injeção Eletrônica</h3>
+          <p>Diagnóstico digital, limpeza e reparo do sistema de injeção para máxima eficiência.</p>
+        </div>
+
+        <!-- 12. HIGIENIZAÇÃO DO AR-CONDICIONADO AUTOMOTIVO -->
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 9v6a3 3 0 003 3h6a3 3 0 003-3V9"></path>
+              <line x1="6" y1="5" x2="6" y2="3"></line>
+              <line x1="12" y1="5" x2="12" y2="3"></line>
+              <line x1="18" y1="5" x2="18" y2="3"></line>
+            </svg>
+          </div>
+          <h3>Higienização do Ar-Condicionado Automotivo</h3>
+          <p>Eliminação de fungos, bactérias e maus odores para um limpo e saudável.</p>
+        </div>
+      </div>
+
+      <div class="servicos__footer">
+        <button class="btn">Solicitar Orçamento</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEÇAS - CATEGORIAS -->
+  <section id="pecas" class="pecas">
+    <div class="container">
+      <div class="pecas__header">
+        <h2 class="section-title">Peças Originais e com Garantia</h2>
+        <p class="pecas__subtitle">Peças originais e de reposição para todas as marcas.</p>
+      </div>
+
+      <!-- CATEGORIAS DE PEÇAS -->
+      <div class="pecas__categories" style="margin-top: 80px;">
+        <h3 style="text-align: center; font-size: 1.5rem; font-family: 'Space Grotesk'; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 40px; color: #000;">Categorias de Peças</h3>
+
+        <div class="pecas__grid">
+          <!-- 1. KITS DE REVISÃO -->
+          <div class="pecas__card">
+            <div class="pecas__card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="2" width="18" height="8" rx="2"></rect>
+                <rect x="3" y="12" width="18" height="8" rx="2"></rect>
+                <line x1="3" y1="7" x2="21" y2="7"></line>
+                <line x1="3" y1="17" x2="21" y2="17"></line>
+              </svg>
+            </div>
+            <h4 class="pecas__card-title">Kits de Revisão</h4>
+            <p class="pecas__card-description">Tudo o que seu carro precisa no prazo.</p>
+          </div>
+
+          <!-- 2. AMORTECEDORES -->
+          <div class="pecas__card">
+            <div class="pecas__card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v5M12 17v5M6 7l-3-3M18 7l3-3M6 17l-3 3M18 17l3 3"></path>
+                <line x1="12" y1="8" x2="12" y2="16"></line>
+              </svg>
+            </div>
+            <h4 class="pecas__card-title">Amortecedores</h4>
+            <p class="pecas__card-description">Conforto e controle em qualquer estrada.</p>
+          </div>
+
+          <!-- 3. DISCO E PASTILHA -->
+          <div class="pecas__card">
+            <div class="pecas__card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="9"></circle>
+                <circle cx="12" cy="12" r="6" fill="currentColor"></circle>
+                <line x1="12" y1="3" x2="12" y2="6"></line>
+              </svg>
+            </div>
+            <h4 class="pecas__card-title">Disco e Pastilha</h4>
+            <p class="pecas__card-description">Frenagem segura, alta resistência e dissipação térmica.</p>
+          </div>
+
+          <!-- 4. PONTEIRAS E ARTICULAÇÕES -->
+          <div class="pecas__card">
+            <div class="pecas__card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 3v6m0 6v6"></path>
+                <circle cx="12" cy="9" r="2"></circle>
+                <circle cx="12" cy="15" r="2"></circle>
+                <line x1="6" y1="9" x2="18" y2="9"></line>
+                <line x1="6" y1="15" x2="18" y2="15"></line>
+              </svg>
+            </div>
+            <h4 class="pecas__card-title">Ponteiras e Articulações</h4>
+            <p class="pecas__card-description">Precisão e estabilidade na direção e suspensão.</p>
+          </div>
+
+          <!-- 5. FLUIDOS E FILTROS -->
+          <div class="pecas__card">
+            <div class="pecas__card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v6m-4 0h8a2 2 0 012 2v8a2 2 0 01-2 2h-8a2 2 0 01-2-2v-8a2 2 0 012-2z"></path>
+                <circle cx="12" cy="14" r="1" fill="currentColor"></circle>
+              </svg>
+            </div>
+            <h4 class="pecas__card-title">Fluidos e Filtros</h4>
+            <p class="pecas__card-description">Óleos, aditivos, ar, combustível e cabine.</p>
+          </div>
+
+          <!-- 6. E MUITO MAIS -->
+          <div class="pecas__card">
+            <div class="pecas__card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6-6 6 6M6 9v10a2 2 0 002 2h8a2 2 0 002-2V9"></path>
+                <line x1="12" y1="13" x2="12" y2="19"></line>
+              </svg>
+            </div>
+            <h4 class="pecas__card-title">E muito mais...</h4>
+            <p class="pecas__card-description">Solicite a peça que seu veículo precisa.</p>
+          </div>
+        </div>
+
+        <!-- BOTÃO DE AÇÃO -->
+        <div class="pecas__action">
+          <a href="https://wa.me/5531999304426?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20peças%20de%20meu%20veículo" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            Solicitar Orçamento
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- PNEUS NACIONAIS - OFERTAS -->
+  <section id="pneus-nacionais" class="ofertas-pneus-nacionais">
+    <div class="container">
+      <div class="ofertas__header">
+        <h2 class="section-title">Pneus Nacionais</h2>
+        <p class="ofertas__guarantee">🛡️ Garantia de 5 anos de fábrica nos pneus</p>
+      </div>
+
+      <div class="ofertas__grid">
+        <!-- CARD 1: Pneu Aro 13 - Goodyear -->
+        <div class="oferta__card">
+          <div class="oferta__image">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="85" fill="#222"/>
+              <circle cx="100" cy="100" r="65" fill="none" stroke="#555" stroke-width="4"/>
+              <circle cx="100" cy="100" r="45" fill="none" stroke="#777" stroke-width="3"/>
+            </svg>
+          </div>
+          <h3 class="oferta__title">Pneu Aro 13 — Goodyear</h3>
+          <div class="oferta__price">
+            <span class="oferta__price-label">A partir de</span>
+            <span class="oferta__price-value">R$ 239,90</span>
+            <span class="oferta__price-condition">à vista</span>
+          </div>
+          <p class="oferta__note">*Consulte medidas disponíveis</p>
+          <a href="https://wa.me/5531999304426?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Pneu%20Aro%2013%20-%20Goodyear" class="btn btn-primary oferta__button">Solicitar Orçamento</a>
+        </div>
+
+        <!-- CARD 2: Pneu Aro 14 - Pirelli -->
+        <div class="oferta__card">
+          <div class="oferta__image">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="85" fill="#222"/>
+              <circle cx="100" cy="100" r="65" fill="none" stroke="#555" stroke-width="4"/>
+              <circle cx="100" cy="100" r="45" fill="none" stroke="#777" stroke-width="3"/>
+            </svg>
+          </div>
+          <h3 class="oferta__title">Pneu Aro 14 — Pirelli</h3>
+          <div class="oferta__price">
+            <span class="oferta__price-label">A partir de</span>
+            <span class="oferta__price-value">R$ 259,90</span>
+            <span class="oferta__price-condition">à vista</span>
+          </div>
+          <p class="oferta__note">*Consulte medidas disponíveis</p>
+          <a href="https://wa.me/5531999304426?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Pneu%20Aro%2014%20-%20Pirelli" class="btn btn-primary oferta__button">Solicitar Orçamento</a>
+        </div>
+
+        <!-- CARD 3: Pneu Aro 15 - Bridgestone -->
+        <div class="oferta__card">
+          <div class="oferta__image">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="85" fill="#222"/>
+              <circle cx="100" cy="100" r="65" fill="none" stroke="#555" stroke-width="4"/>
+              <circle cx="100" cy="100" r="45" fill="none" stroke="#777" stroke-width="3"/>
+            </svg>
+          </div>
+          <h3 class="oferta__title">Pneu Aro 15 — Bridgestone</h3>
+          <div class="oferta__price">
+            <span class="oferta__price-label">A partir de</span>
+            <span class="oferta__price-value">R$ 299,90</span>
+            <span class="oferta__price-condition">à vista</span>
+          </div>
+          <p class="oferta__note">*Consulte medidas disponíveis</p>
+          <a href="https://wa.me/5531999304426?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Pneu%20Aro%2015%20-%20Bridgestone" class="btn btn-primary oferta__button">Solicitar Orçamento</a>
+        </div>
+
+        <!-- CARD 4: Pneu Aro 16 - Michelin -->
+        <div class="oferta__card">
+          <div class="oferta__image">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="85" fill="#222"/>
+              <circle cx="100" cy="100" r="65" fill="none" stroke="#555" stroke-width="4"/>
+              <circle cx="100" cy="100" r="45" fill="none" stroke="#777" stroke-width="3"/>
+            </svg>
+          </div>
+          <h3 class="oferta__title">Pneu Aro 16 — Michelin</h3>
+          <div class="oferta__price">
+            <span class="oferta__price-label">A partir de</span>
+            <span class="oferta__price-value">R$ 329,90</span>
+            <span class="oferta__price-condition">à vista</span>
+          </div>
+          <p class="oferta__note">*Consulte medidas disponíveis</p>
+          <a href="https://wa.me/5531999304426?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Pneu%20Aro%2016%20-%20Michelin" class="btn btn-primary oferta__button">Solicitar Orçamento</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTAS DE PNEUS -->
+  <section id="pneus-importados" class="ofertas-pneus">
+    <div class="container">
+      <div class="ofertas__header">
+        <h2 class="section-title">Ofertas de Pneus</h2>
+        <p class="ofertas__guarantee">🛡️ Garantia de 5 anos de fábrica nos pneus</p>
+      </div>
+
+      <div class="ofertas__grid">
+        <!-- CARD 1: Pneu Aro 13 -->
+        <div class="oferta__card">
+          <div class="oferta__image">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="85" fill="#222"/>
+              <circle cx="100" cy="100" r="65" fill="none" stroke="#555" stroke-width="4"/>
+              <circle cx="100" cy="100" r="45" fill="none" stroke="#777" stroke-width="3"/>
+            </svg>
+          </div>
+          <h3 class="oferta__title">Pneu Aro 13</h3>
+          <div class="oferta__price">
+            <span class="oferta__price-label">A partir de</span>
+            <span class="oferta__price-value">R$ 209,90</span>
+            <span class="oferta__price-condition">à vista</span>
+          </div>
+          <p class="oferta__note">*Consulte medidas da promoção</p>
+          <a href="https://wa.me/5531999304426?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Pneu%20Aro%2013" class="btn btn-primary oferta__button">Solicitar Orçamento</a>
+        </div>
+
+        <!-- CARD 2: Pneu Aro 14 -->
+        <div class="oferta__card">
+          <div class="oferta__image">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="85" fill="#222"/>
+              <circle cx="100" cy="100" r="65" fill="none" stroke="#555" stroke-width="4"/>
+              <circle cx="100" cy="100" r="45" fill="none" stroke="#777" stroke-width="3"/>
+            </svg>
+          </div>
+          <h3 class="oferta__title">Pneu Aro 14</h3>
+          <div class="oferta__price">
+            <span class="oferta__price-label">A partir de</span>
+            <span class="oferta__price-value">R$ 199,90</span>
+            <span class="oferta__price-condition">à vista</span>
+          </div>
+          <p class="oferta__note">*Consulte medidas da promoção</p>
+          <a href="https://wa.me/5531999304426?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Pneu%20Aro%2014" class="btn btn-primary oferta__button">Solicitar Orçamento</a>
+        </div>
+
+        <!-- CARD 3: Pneu Aro 15 -->
+        <div class="oferta__card">
+          <div class="oferta__image">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="85" fill="#222"/>
+              <circle cx="100" cy="100" r="65" fill="none" stroke="#555" stroke-width="4"/>
+              <circle cx="100" cy="100" r="45" fill="none" stroke="#777" stroke-width="3"/>
+            </svg>
+          </div>
+          <h3 class="oferta__title">Pneu Aro 15</h3>
+          <div class="oferta__price">
+            <span class="oferta__price-label">A partir de</span>
+            <span class="oferta__price-value">R$ 269,90</span>
+            <span class="oferta__price-condition">à vista</span>
+          </div>
+          <p class="oferta__note">*Consulte medidas da promoção</p>
+          <a href="https://wa.me/5531999304426?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Pneu%20Aro%2015" class="btn btn-primary oferta__button">Solicitar Orçamento</a>
+        </div>
+
+        <!-- CARD 4: Pneu Aro 16 -->
+        <div class="oferta__card">
+          <div class="oferta__image">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="85" fill="#222"/>
+              <circle cx="100" cy="100" r="65" fill="none" stroke="#555" stroke-width="4"/>
+              <circle cx="100" cy="100" r="45" fill="none" stroke="#777" stroke-width="3"/>
+            </svg>
+          </div>
+          <h3 class="oferta__title">Pneu Aro 16</h3>
+          <div class="oferta__price">
+            <span class="oferta__price-label">A partir de</span>
+            <span class="oferta__price-value">R$ 289,90</span>
+            <span class="oferta__price-condition">à vista</span>
+          </div>
+          <p class="oferta__note">*Consulte medidas da promoção</p>
+          <a href="https://wa.me/5531999304426?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Pneu%20Aro%2016" class="btn btn-primary oferta__button">Solicitar Orçamento</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section id="diferenciais" class="diferenciais">
+    <div class="container">
+      <div class="diferenciais__header">
+        <h2 class="section-title diferenciais__title">Por que escolher a MB Pneus?</h2>
+        <p class="diferenciais__subtitle">Excelência em cada detalhe para cuidar do seu veículo</p>
+      </div>
+      <div class="diferenciais__grid">
+        <!-- Card 1: Mecânica Completa -->
+        <div class="diferenciais__card">
+          <div class="diferenciais__icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path>
+              <path d="M12 8v8m-4-4h8"></path>
+            </svg>
+          </div>
+          <h3 class="diferenciais__card-title">Mecânica Completa</h3>
+          <p class="diferenciais__card-description">Oferecemos todos os serviços automotivos que seu carro precisa em um só lugar</p>
+        </div>
+
+        <!-- Card 2: Atendimento Rápido -->
+        <div class="diferenciais__card">
+          <div class="diferenciais__icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <h3 class="diferenciais__card-title">Atendimento Rápido</h3>
+          <p class="diferenciais__card-description">Agilidade no diagnóstico e execução, resolvendo seu problema rapidamente</p>
+        </div>
+
+        <!-- Card 3: Garantia em Todos os Serviços e Peças -->
+        <div class="diferenciais__card">
+          <div class="diferenciais__icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 12 15 15 9"></polyline>
+            </svg>
+          </div>
+          <h3 class="diferenciais__card-title">Garantia Completa</h3>
+          <p class="diferenciais__card-description">Garantia em todos os serviços e peças para sua tranquilidade</p>
+        </div>
+
+        <!-- Card 4: Preço Justo -->
+        <div class="diferenciais__card">
+          <div class="diferenciais__icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <h3 class="diferenciais__card-title">Preço Justo</h3>
+          <p class="diferenciais__card-description">Qualidade e honestidade em cada orçamento, sem surpresas</p>
+        </div>
+      </div>
+
+      <div class="diferenciais__action">
+        <a href="https://wa.me/5531999304426?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20veículo" class="btn btn-white" target="_blank" rel="noopener noreferrer">Solicitar Orçamento</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVALIAÇÕES GOOGLE -->
+  <section id="avaliacoes" class="avaliacoes">
+    <div class="container">
+      <!-- TÍTULO PRINCIPAL -->
+      <h2 class="section-title">O que Nossos Clientes Dizem</h2>
+
+      <!-- DESTAQUE PRINCIPAL NO TOPO -->
+      <div class="avaliacoes__header">
+        <p class="avaliacoes__subtitle-box">Avaliações verificadas no Google</p>
+
+        <div class="avaliacoes__rating-container">
+          <div class="avaliacoes__rating">
+            <div class="avaliacoes__stars-row">
+              <span class="avaliacoes__stars">⭐⭐⭐⭐⭐</span>
+              <span class="avaliacoes__score">4,9</span>
+            </div>
+            <p class="avaliacoes__count">474+ avaliações</p>
+            <a href="https://www.google.com/maps/place/MB+Pneus/@-19.920447,-43.95825,15z" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Ver no Google</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAROUSEL DE AVALIAÇÕES EMBAIXO -->
+      <div class="avaliacoes__carousel-wrapper">
+          <div class="avaliacoes__carousel" id="avaliacoesCarousel">
+            <div class="avaliacoes__track">
+              <!-- AVALIAÇÃO 1 -->
+              <div class="avaliacoes__slide">
+                <div class="avaliacoes__card">
+                  <div class="avaliacoes__head">
+                    <div class="avaliacoes__avatar" style="background: linear-gradient(135deg, #1e5a3f, #2d8659);">J</div>
+                    <div class="avaliacoes__info">
+                      <h4 class="avaliacoes__name">João Augusto</h4>
+                      <div class="avaliacoes__date">6 avaliações</div>
+                    </div>
+                  </div>
+                  <div class="avaliacoes__rating-stars">⭐⭐⭐⭐⭐</div>
+                  <p class="avaliacoes__text">"Um espetáculo de atendimento. Equipe super atenciosa, revisaram o meu carro e me passaram um diagnóstico preciso. Preço justíssimo!"</p>
+                </div>
+              </div>
+
+              <!-- AVALIAÇÃO 2 -->
+              <div class="avaliacoes__slide">
+                <div class="avaliacoes__card">
+                  <div class="avaliacoes__head">
+                    <div class="avaliacoes__avatar" style="background: linear-gradient(135deg, #6f42c1, #9966ff);">K</div>
+                    <div class="avaliacoes__info">
+                      <h4 class="avaliacoes__name">Kelli Silva</h4>
+                      <div class="avaliacoes__date">Local Guide • 64 avaliações</div>
+                    </div>
+                  </div>
+                  <div class="avaliacoes__rating-stars">⭐⭐⭐⭐⭐</div>
+                  <p class="avaliacoes__text">"Fui bem atendida, o atendente foi atencioso e me esclareceu todas as dúvidas. Local limpo e organizado. Recomendo!"</p>
+                </div>
+              </div>
+
+              <!-- AVALIAÇÃO 3 -->
+              <div class="avaliacoes__slide">
+                <div class="avaliacoes__card">
+                  <div class="avaliacoes__head">
+                    <div class="avaliacoes__avatar" style="background: linear-gradient(135deg, #d63031, #ff6b6b);">M</div>
+                    <div class="avaliacoes__info">
+                      <h4 class="avaliacoes__name">Michel Carvalho</h4>
+                      <div class="avaliacoes__date">1 avaliação</div>
+                    </div>
+                  </div>
+                  <div class="avaliacoes__rating-stars">⭐⭐⭐⭐⭐</div>
+                  <p class="avaliacoes__text">"Ótimo atendimento super indico. Atendentes atenciosos prestativos, gostei muito do trabalho de vocês!"</p>
+                </div>
+              </div>
+
+              <!-- AVALIAÇÃO 4 -->
+              <div class="avaliacoes__slide">
+                <div class="avaliacoes__card">
+                  <div class="avaliacoes__head">
+                    <div class="avaliacoes__avatar" style="background: linear-gradient(135deg, #0984e3, #6c5ce7);">M</div>
+                    <div class="avaliacoes__info">
+                      <h4 class="avaliacoes__name">Melkei Ferreira</h4>
+                      <div class="avaliacoes__date">Local Guide • 16 avaliações</div>
+                    </div>
+                  </div>
+                  <div class="avaliacoes__rating-stars">⭐⭐⭐⭐⭐</div>
+                  <p class="avaliacoes__text">"Atendimento maravilhoso, pessoas autênticas e de bom preço. Amei a qualidade do serviço prestado!"</p>
+                </div>
+              </div>
+
+              <!-- AVALIAÇÃO 5 -->
+              <div class="avaliacoes__slide">
+                <div class="avaliacoes__card">
+                  <div class="avaliacoes__head">
+                    <div class="avaliacoes__avatar" style="background: linear-gradient(135deg, #e17055, #fd79a8);">G</div>
+                    <div class="avaliacoes__info">
+                      <h4 class="avaliacoes__name">Gabriel Costa</h4>
+                      <div class="avaliacoes__date">7 avaliações</div>
+                    </div>
+                  </div>
+                  <div class="avaliacoes__rating-stars">⭐⭐⭐⭐⭐</div>
+                  <p class="avaliacoes__text">"Muito boa prestação de serviços! Alinhamento bem rápido. Equipe muito boa e funcionários atenciosos!"</p>
+                  <span class="avaliacoes__badge novo">NOVA</span>
+                </div>
+              </div>
+
+              <!-- AVALIAÇÃO 6 -->
+              <div class="avaliacoes__slide">
+                <div class="avaliacoes__card">
+                  <div class="avaliacoes__head">
+                    <div class="avaliacoes__avatar" style="background: linear-gradient(135deg, #ff7675, #fdcb6e);">V</div>
+                    <div class="avaliacoes__info">
+                      <h4 class="avaliacoes__name">Vinicius Ferreira</h4>
+                      <div class="avaliacoes__date">1 avaliação</div>
+                    </div>
+                  </div>
+                  <div class="avaliacoes__rating-stars">⭐⭐⭐⭐⭐</div>
+                  <p class="avaliacoes__text">"Excelente atendimento especialmente atendente da colaboradora Thais. Super recomendo nota 10!"</p>
+                  <span class="avaliacoes__badge novo">NOVA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTROLES -->
+          <div class="avaliacoes__controls">
+            <button class="avaliacoes__btn avaliacoes__btn--prev" id="carouselPrev" aria-label="Avaliação anterior">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button class="avaliacoes__btn avaliacoes__btn--next" id="carouselNext" aria-label="Próxima avaliação">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <!-- DOTS INDICADORES -->
+          <div class="avaliacoes__dots" id="carouselDots"></div>
+        </div>
+      </div>
+
+      <!-- CTA FINAL -->
+      <div class="avaliacoes__cta">
+        <p class="avaliacoes__cta-text">Tem alguma dúvida? Fale conosco agora mesmo!</p>
+        <a href="https://wa.me/5531999304426?text=Olá!%20Tenho%20uma%20dúvida%20e%20gostaria%20de%20mais%20informações" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Solicitar Orçamento</a>
+      </div>
+    </div>
+
+    <!-- Schema.org AggregateRating para SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "MB Pneus",
+      "image": "https://mbpneus.com.br/logo.png",
+      "description": "Centro automotivo especializado em pneus, peças e serviços mecânicos em Belo Horizonte",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Vilarinho, 3741",
+        "addressLocality": "Belo Horizonte",
+        "addressRegion": "MG",
+        "postalCode": "31615-250",
+        "addressCountry": "BR"
+      },
+      "telephone": "+55 31 3221-2414",
+      "url": "https://mbpneus.com.br",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "474"
+      }
+    }
+    </script>
+  </section>
+
+  <!-- LOCALIZAÇÃO -->
+  <section id="localizacao" class="localizacao">
+    <div class="container">
+      <h2 class="section-title">Onde Estamos</h2>
+
+      <!-- MAPA COM SKELETON LOADING -->
+      <div class="localizacao__map" id="mapaContainer">
+        <!-- SKELETON LOADING -->
+        <div class="localizacao__skeleton" id="mapSkeleton">
+          <div class="localizacao__skeleton-shimmer"></div>
+        </div>
+
+        <!-- IFRAME LAZY LOADED -->
+        <iframe
+          id="mapaIframe"
+          class="localizacao__map-iframe"
+          width="100%"
+          height="100%"
+          style="border:0; border-radius: 12px; opacity: 0; transition: opacity 0.3s ease;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.8194367890606!2d-43.958250!3d-19.920447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6d5532d6e4c9ef9%3A0x4d8d8f8f8f8f8f8f!2sAv.%20Vilarinho%2C%203741%20-%20Let%C3%ADcia%2C%20Belo%20Horizonte%2C%20MG%2031615-250!5e0!3m2!1spt-BR!2sbr!4v1735982400000">
+        </iframe>
+      </div>
+
+      <!-- INFORMAÇÕES EM 4 COLUNAS -->
+      <div class="localizacao__info">
+        <!-- CARD 1: ENDEREÇO -->
+        <div class="localizacao__unit">
+          <p class="localizacao__label">📍 Endereço</p>
+          <p class="localizacao__value">
+            Av. Vilarinho, 3741<br>
+            Bairro Letícia<br>
+            Belo Horizonte - MG<br>
+            CEP: 31615-250
+          </p>
+        </div>
+
+        <!-- CARD 2: TELEFONES -->
+        <div class="localizacao__unit">
+          <p class="localizacao__label">📞 Telefones</p>
+          <p class="localizacao__value">
+            <a href="tel:+553132212414" class="localizacao__link">(31) 3221-2414</a><br>
+            <a href="https://wa.me/5531999304426" class="localizacao__link" target="_blank" rel="noopener noreferrer">(31) 99930-4426</a>
+          </p>
+        </div>
+
+        <!-- CARD 3: EMAIL -->
+        <div class="localizacao__unit">
+          <p class="localizacao__label">✉️ E-mail</p>
+          <p class="localizacao__value">
+            <a href="mailto:contato.mbpneus@gmail.com" class="localizacao__link">contato.mbpneus@gmail.com</a>
+          </p>
+        </div>
+
+        <!-- CARD 4: HORÁRIO -->
+        <div class="localizacao__unit">
+          <p class="localizacao__label">🕐 Horário de Funcionamento</p>
+          <p class="localizacao__value">
+            Seg–Sex: 8h às 18h<br>
+            Sábado: 8h às 14h<br>
+            Domingo: Fechado
+          </p>
+        </div>
+      </div>
+
+      <!-- BOTÃO DE AÇÃO -->
+      <div class="localizacao__action">
+        <a href="https://wa.me/5531999304426" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.869 1.171c-1.519.754-2.753 1.787-3.68 3.176C3.87 11.57 3.5 13.205 3.5 14.935c0 1.31.198 2.504.604 3.558l-1.3 4.33 4.595-1.304c1.007.535 2.162.837 3.201.837 4.886 0 8.864-3.978 8.864-8.864 0-2.367-.92-4.594-2.586-6.269-1.667-1.675-3.888-2.594-6.288-2.594z"/>
+          </svg>
+          <span>Falar no WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL TERMOS E PRIVACIDADE -->
+  <div id="termsModal" class="terms-modal">
+    <div class="terms-modal__overlay"></div>
+    <div class="terms-modal__content">
+      <button class="terms-modal__close" aria-label="Fechar modal">&times;</button>
+
+      <!-- POLÍTICA DE PRIVACIDADE -->
+      <div id="privacyContent" class="terms-modal__section">
+        <h2>Política de Privacidade</h2>
+        <p>A sua privacidade é importante para nós. É política do <strong>MB Pneus</strong> respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site <strong>MB Pneus</strong>, e outros sites que possuímos e operamos.</p>
+
+        <h3>Coleta de Informações</h3>
+        <p>Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento. Também informamos por que estamos coletando e como será usado.</p>
+
+        <h3>Retenção de Dados</h3>
+        <p>Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.</p>
+
+        <h3>Compartilhamento de Informações</h3>
+        <p>Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.</p>
+
+        <h3>Sites Externos</h3>
+        <p>O nosso site pode ter links para sites externos que não são operados por nós. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respectivas políticas de privacidade.</p>
+
+        <h3>Seu Direito a Recusar</h3>
+        <p>Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados.</p>
+
+        <h3>Aceitação da Política</h3>
+        <p>O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de privacidade e informações pessoais. Se você tiver alguma dúvida sobre como lidamos com dados do usuário e informações pessoais, entre em contacto conosco.</p>
+
+        <h3>Google AdSense</h3>
+        <p>O serviço Google AdSense que usamos para veicular publicidade usa um cookie DoubleClick para veicular anúncios mais relevantes em toda a Web e limitar o número de vezes que um determinado anúncio é exibido para você. Para mais informações sobre o Google AdSense, consulte as FAQs oficiais sobre privacidade do Google AdSense.</p>
+
+        <h3>Publicidade e Cookies</h3>
+        <p>Utilizamos anúncios para compensar os custos de funcionamento deste site e fornecer financiamento para futuros desenvolvimentos. Os cookies de publicidade comportamental usados por este site foram projetados para garantir que você forneça os anúncios mais relevantes sempre que possível, rastreando anonimamente seus interesses e apresentando coisas semelhantes que possam ser do seu interesse.</p>
+
+        <p>Vários parceiros anunciam em nosso nome e os cookies de rastreamento de afiliados simplesmente nos permitem ver se nossos clientes acessaram o site através de um dos sites de nossos parceiros, para que possamos creditá-los adequadamente e, quando aplicável, permitir que nossos parceiros afiliados ofereçam qualquer promoção que pode fornecê-lo para fazer uma compra.</p>
+
+        <h3>Compromisso do Usuário</h3>
+        <p>O usuário se compromete a fazer uso adequado dos conteúdos e da informação que o <strong>MB Pneus</strong> oferece no site e com caráter enunciativo, mas não limitativo:</p>
+
+        <ul style="margin-left: 20px; margin-bottom: 16px;">
+          <li><strong>A)</strong> Não se envolver em atividades que sejam ilegais ou contrárias à boa fé a à ordem pública;</li>
+          <li><strong>B)</strong> Não difundir propaganda ou conteúdo de natureza racista, xenofóbica, jogos de sorte ou azar, qualquer tipo de pornografia ilegal, de apologia ao terrorismo ou contra os direitos humanos;</li>
+          <li><strong>C)</strong> Não causar danos aos sistemas físicos (hardwares) e lógicos (softwares) do <strong>MB Pneus</strong>, de seus fornecedores ou terceiros, para introduzir ou disseminar vírus informáticos ou quaisquer outros sistemas de hardware ou software que sejam capazes de causar danos anteriormente mencionados.</li>
+        </ul>
+
+        <h3>Mais Informações</h3>
+        <p>Esperemos que esteja esclarecido e, como mencionado anteriormente, se houver algo que você não tem certeza se precisa ou não, geralmente é mais seguro deixar os cookies ativados, caso interaja com um dos recursos que você usa em nosso site.</p>
+
+        <p><em>Esta política é efetiva a partir de 16 de junho de 2026.</em></p>
+      </div>
+
+      <!-- TERMOS DE USO -->
+      <div id="termsContent" class="terms-modal__section" style="display: none;">
+        <h2>Termos de Uso</h2>
+
+        <h3>1. Termos</h3>
+        <p>Ao acessar ao site <strong>MB Pneus</strong>, concorda em cumprir estes termos de serviço, todas as leis e regulamentos aplicáveis e concorda que é responsável pelo cumprimento de todas as leis locais aplicáveis. Se você não concordar com algum desses termos, está proibido de usar ou acessar este site. Os materiais contidos neste site são protegidos pelas leis de direitos autorais e marcas comerciais aplicáveis.</p>
+
+        <h3>2. Uso de Licença</h3>
+        <p>É concedida permissão para baixar temporariamente uma cópia dos materiais (informações ou software) no site <strong>MB Pneus</strong>, apenas para visualização transitória pessoal e não comercial. Esta é a concessão de uma licença, não uma transferência de título e, sob esta licença, você não pode:</p>
+
+        <ul style="margin-left: 20px; margin-bottom: 16px;">
+          <li>Modificar ou copiar os materiais;</li>
+          <li>Usar os materiais para qualquer finalidade comercial ou para exibição pública (comercial ou não comercial);</li>
+          <li>Tentar descompilar ou fazer engenharia reversa de qualquer software contido no site <strong>MB Pneus</strong>;</li>
+          <li>Remover quaisquer direitos autorais ou outras notações de propriedade dos materiais;</li>
+          <li>Transferir os materiais para outra pessoa ou 'espelhe' os materiais em qualquer outro servidor.</li>
+        </ul>
+
+        <p>Esta licença será automaticamente rescindida se você violar alguma dessas restrições e poderá ser rescindida por <strong>MB Pneus</strong> a qualquer momento. Ao encerrar a visualização desses materiais ou após o término desta licença, você deve apagar todos os materiais baixados em sua posse, seja em formato eletrónico ou impresso.</p>
+
+        <h3>3. Isenção de Responsabilidade</h3>
+        <p>Os materiais no site da <strong>MB Pneus</strong> são fornecidos 'como estão'. <strong>MB Pneus</strong> não oferece garantias, expressas ou implícitas, e, por este meio, isenta e nega todas as outras garantias, incluindo, sem limitação, garantias implícitas ou condições de comercialização, adequação a um fim específico ou não violação de propriedade intelectual ou outra violação de direitos.</p>
+
+        <p>Além disso, o <strong>MB Pneus</strong> não garante ou faz qualquer representação relativa à precisão, aos resultados prováveis ou à confiabilidade do uso dos materiais em seu site ou de outra forma relacionado a esses materiais ou em sites vinculados a este site.</p>
+
+        <h3>4. Limitações</h3>
+        <p>Em nenhum caso o <strong>MB Pneus</strong> ou seus fornecedores serão responsáveis por quaisquer danos (incluindo, sem limitação, danos por perda de dados ou lucro ou devido a interrupção dos negócios) decorrentes do uso ou da incapacidade de usar os materiais em <strong>MB Pneus</strong>, mesmo que <strong>MB Pneus</strong> ou um representante autorizado da <strong>MB Pneus</strong> tenha sido notificado oralmente ou por escrito da possibilidade de tais danos. Como algumas jurisdições não permitem limitações em garantias implícitas, ou limitações de responsabilidade por danos consequentes ou incidentais, essas limitações podem não se aplicar a você.</p>
+
+        <h3>5. Precisão dos Materiais</h3>
+        <p>Os materiais exibidos no site da <strong>MB Pneus</strong> podem incluir erros técnicos, tipográficos ou fotográficos. <strong>MB Pneus</strong> não garante que qualquer material em seu site seja preciso, completo ou atual. <strong>MB Pneus</strong> pode fazer alterações nos materiais contidos em seu site a qualquer momento, sem aviso prévio. No entanto, <strong>MB Pneus</strong> não se compromete a atualizar os materiais.</p>
+
+        <h3>6. Links</h3>
+        <p>O <strong>MB Pneus</strong> não analisou todos os sites vinculados ao seu site e não é responsável pelo conteúdo de nenhum site vinculado. A inclusão de qualquer link não implica endosso por <strong>MB Pneus</strong> do site. O uso de qualquer site vinculado é por conta e risco do usuário.</p>
+
+        <h3>Modificações</h3>
+        <p>O <strong>MB Pneus</strong> pode revisar estes termos de serviço do site a qualquer momento, sem aviso prévio. Ao usar este site, você concorda em ficar vinculado à versão atual desses termos de serviço.</p>
+
+        <h3>Lei Aplicável</h3>
+        <p>Estes termos e condições são regidos e interpretados de acordo com as leis do <strong>MB Pneus</strong> e você se submete irrevogavelmente à jurisdição exclusiva dos tribunais naquele estado ou localidade.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <!-- COLUNA 1: LOGO E REDES SOCIAIS -->
+        <div class="footer__column footer__column--brand">
+          <h2 class="footer__logo">MB Pneus</h2>
+          <p class="footer__description">Centro automotivo especializado em pneus, peças e serviços mecânicos.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                <circle cx="18" cy="6" r="1" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a6 6 0 0 0-6 6v3H7v4h2v8h4v-8h3l1-4h-4V8a1 1 0 0 1 1-1h3z" fill="none" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/5531999304426" class="footer__social-link" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.869 1.171c-1.519.754-2.753 1.787-3.68 3.176C3.87 11.57 3.5 13.205 3.5 14.935c0 1.31.198 2.504.604 3.558l-1.3 4.33 4.595-1.304c1.007.535 2.162.837 3.201.837 4.886 0 8.864-3.978 8.864-8.864 0-2.367-.92-4.594-2.586-6.269-1.667-1.675-3.888-2.594-6.288-2.594z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- COLUNA 2: LINKS RÁPIDOS -->
+        <div class="footer__column">
+          <h3 class="footer__title">Links Rápidos</h3>
+          <ul class="footer__links">
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#pecas">Peças</a></li>
+            <li><a href="#pneus-nacionais">Pneus Nacionais</a></li>
+            <li><a href="#pneus-importados">Pneus Importados</a></li>
+            <li><a href="#diferenciais">Diferenciais</a></li>
+            <li><a href="#localizacao">Localização</a></li>
+          </ul>
+        </div>
+
+        <!-- COLUNA 3: CONTATO -->
+        <div class="footer__column">
+          <h3 class="footer__title">Contato</h3>
+          <div class="footer__contact-item">
+            <p class="footer__contact-label">📍 Endereço</p>
+            <p class="footer__contact-value">
+              Av. Vilarinho, 3741<br>
+              Bairro Letícia<br>
+              Belo Horizonte - MG<br>
+              CEP: 31615-250
+            </p>
+          </div>
+          <div class="footer__contact-item">
+            <p class="footer__contact-label">📞 Telefones</p>
+            <p class="footer__contact-value">
+              <a href="tel:+553132212414" class="footer__contact-link">(31) 3221-2414</a><br>
+              <a href="https://wa.me/5531999304426" class="footer__contact-link" target="_blank" rel="noopener noreferrer">(31) 99930-4426</a>
+            </p>
+          </div>
+          <div class="footer__contact-item">
+            <p class="footer__contact-label">✉️ E-mail</p>
+            <p class="footer__contact-value">
+              <a href="mailto:contato.mbpneus@gmail.com" class="footer__contact-link">contato.mbpneus@gmail.com</a>
+            </p>
+          </div>
+          <div class="footer__contact-item">
+            <p class="footer__contact-label">🕐 Horário</p>
+            <p class="footer__contact-value">
+              Seg–Sex: 8h às 18h<br>
+              Sábado: 8h às 14h<br>
+              Domingo: Fechado
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 MB Pneus. Todos os direitos reservados.</p>
+        <div class="footer__links-bottom">
+          <button class="footer__link-btn" id="privacyBtn">Política de Privacidade</button>
+          <button class="footer__link-btn" id="termsBtn">Termos de Uso</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
