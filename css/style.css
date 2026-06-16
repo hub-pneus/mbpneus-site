@@ -507,7 +507,6 @@ body::after {
   text-decoration: none;
   transition: transform 0.2s ease;
   z-index: 999;
-  position: relative;
   overflow: hidden;
   aria-label: "Falar no WhatsApp";
   title: "Falar no WhatsApp";
@@ -2836,6 +2835,87 @@ body::after {
   .pecas__card-description {
     font-size: 0.9rem;
   }
+
+  /* LOCALIZAÇÃO - CENTRALIZE MOBILE */
+  .localizacao__info {
+    grid-template-columns: 1fr;
+  }
+
+  .localizacao__unit {
+    text-align: center;
+  }
+
+  .localizacao__label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .localizacao__value {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  /* FOOTER - CENTRALIZE MOBILE */
+  .footer__content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer__column h3,
+  .footer__column h4 {
+    text-align: center;
+  }
+
+  .footer__list {
+    text-align: center;
+  }
+
+  .footer__list li {
+    text-align: center;
+  }
+
+  .footer__list a {
+    display: inline-block;
+  }
+
+  .footer__social {
+    justify-content: center;
+  }
+
+  /* AVALIAÇÕES - FIX CAROUSEL OVERFLOW */
+  .avaliacoes__carousel-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .avaliacoes__carousel {
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .avaliacoes__slide {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .avaliacoes__card {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .avaliacoes__text {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
 }
 
 @media (max-width: 480px) {
@@ -3068,21 +3148,24 @@ body::after {
 }
 
 .avaliacoes__carousel {
-  overflow: visible;
+  overflow: hidden;
   border-radius: var(--radius-lg);
-  padding: 0 20px;
-  margin: 0 -20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .avaliacoes__track {
   display: flex;
   transition: transform 0.5s ease;
   gap: 20px;
+  width: 100%;
 }
 
 .avaliacoes__slide {
   min-width: 100%;
   flex-shrink: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .avaliacoes__card {
