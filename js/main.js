@@ -1137,6 +1137,41 @@ class TermsModal {
 }
 
 // ==========================================
+// EXPANDIR OFERTAS
+// ==========================================
+class OfertasExpander {
+  constructor() {
+    this.expandBtns = document.querySelectorAll('.ofertas__expand-btn');
+    this.init();
+  }
+
+  init() {
+    this.expandBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        this.toggleExpand(btn);
+      });
+    });
+  }
+
+  toggleExpand(btn) {
+    const targetClass = btn.getAttribute('data-target');
+    const grid = document.querySelector(`.${targetClass}`);
+
+    if (grid) {
+      const isExpanded = grid.classList.contains('expanded');
+
+      if (isExpanded) {
+        grid.classList.remove('expanded');
+        btn.textContent = 'Ver mais ofertas →';
+      } else {
+        grid.classList.add('expanded');
+        btn.textContent = 'Ver menos ofertas ←';
+      }
+    }
+  }
+}
+
+// ==========================================
 // INICIALIZAÇÃO
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -1161,4 +1196,5 @@ document.addEventListener('DOMContentLoaded', () => {
   new ReviewsCarousel();
   new DynamicSectionShadows();
   new LazyMapLoader();
+  new OfertasExpander();
 });

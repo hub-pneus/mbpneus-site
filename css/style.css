@@ -3775,3 +3775,68 @@ body::after {
     font-size: 1rem;
   }
 }
+
+/* ==========================================
+   CTA E EXPANDIR OFERTAS
+   ========================================== */
+
+.servicos__cta,
+.ofertas__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.servicos__cta .btn,
+.ofertas__cta .btn {
+  font-size: 1rem;
+  padding: 0.875rem 2rem;
+}
+
+.ofertas__expand {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.ofertas__expand-btn {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.ofertas__expand-btn:hover {
+  color: var(--color-primary-hover);
+}
+
+/* Mobile: Cards 3-4 initially hidden */
+@media (max-width: 600px) {
+  .ofertas__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .ofertas__grid .oferta__card:nth-child(n+3) {
+    display: none;
+  }
+
+  /* When expanded, show all cards */
+  .ofertas__grid.expanded {
+    display: grid;
+  }
+
+  .ofertas__grid.expanded .oferta__card {
+    display: flex;
+  }
+
+  .ofertas__expand-btn {
+    font-size: 1rem;
+  }
+}
