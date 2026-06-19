@@ -1141,7 +1141,7 @@ class TermsModal {
 // ==========================================
 class OfertasExpander {
   constructor() {
-    this.expandBtns = document.querySelectorAll('.ofertas__expand-btn');
+    this.expandBtns = document.querySelectorAll('.ofertas__expand-btn, .servicos__expand-btn');
     this.init();
   }
 
@@ -1159,13 +1159,16 @@ class OfertasExpander {
 
     if (grid) {
       const isExpanded = grid.classList.contains('expanded');
+      const isServices = btn.classList.contains('servicos__expand-btn');
+      const moreText = isServices ? 'Ver mais serviços →' : 'Ver mais ofertas →';
+      const lessText = isServices ? 'Ver menos serviços ←' : 'Ver menos ofertas ←';
 
       if (isExpanded) {
         grid.classList.remove('expanded');
-        btn.textContent = 'Ver mais ofertas →';
+        btn.textContent = moreText;
       } else {
         grid.classList.add('expanded');
-        btn.textContent = 'Ver menos ofertas ←';
+        btn.textContent = lessText;
       }
     }
   }

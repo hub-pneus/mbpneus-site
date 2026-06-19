@@ -2837,6 +2837,35 @@ body::after {
     border-top: 1px solid #eee;
   }
 
+  /* Expand button for services */
+  .servicos__expand {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .servicos__expand-btn {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    transition: var(--transition);
+    font-family: inherit;
+  }
+
+  .servicos__expand-btn:hover {
+    color: var(--color-primary-hover);
+  }
+
+  /* When expanded, show all service cards */
+  .servicos__grid.expanded > .service-card {
+    display: block;
+  }
+
   .servicos__footer .btn {
     padding: 10px 20px;
     font-size: 0.9rem;
