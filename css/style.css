@@ -2575,30 +2575,23 @@ body::after {
   }
 
   /* ==========================================
-     2. FAIXA TELEFONE/ENDEREÇO (#CC0000)
+     2. FAIXA TELEFONE/ENDEREÇO (#CC0000) - REMOVIDA
      ========================================== */
   body::after {
-    content: '📞 (31) 99930-4426 · Av. Vilarinho, 3741';
-    position: fixed;
-    top: 32px;
-    left: 0;
-    right: 0;
-    background-color: #CC0000;
-    color: white;
-    text-align: center;
-    padding: 8px 16px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    z-index: 1002;
-    line-height: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    content: '' !important;
+    position: fixed !important;
+    top: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: none !important;
+    visibility: hidden !important;
+    z-index: -1 !important;
   }
 
-  /* Deslocar o corpo para baixo para acomodar as faixas fixas */
+  /* Deslocar o corpo para baixo para acomodar a trust bar apenas */
   body {
-    margin-top: calc(var(--header-height) + 64px) !important;
+    margin-top: 32px !important;
   }
 
   /* ==========================================
