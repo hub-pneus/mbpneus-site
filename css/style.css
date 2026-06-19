@@ -2559,7 +2559,7 @@ body::after {
      1. TRUST BAR FIXA (★ 4,9 | 474+ avaliações | desde 2014)
      ========================================== */
   body::before {
-    content: '★ 4,9 | 474+ avaliações | desde 2014';
+    content: '★ 4,9 | 474+ avaliações';
     position: fixed;
     top: 0;
     left: 0;
