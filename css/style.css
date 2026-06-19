@@ -2552,15 +2552,77 @@ body::after {
 }
 
 /* ==========================================
-   RESPONSIVIDADE
+   RESPONSIVIDADE - MOBILE (max-width: 768px)
    ========================================== */
 @media (max-width: 768px) {
-  .header__content {
-    padding: 0 var(--spacing-md);
+  /* ==========================================
+     1. TRUST BAR FIXA (★ 4,9 | 474+ avaliações | desde 2014)
+     ========================================== */
+  body::before {
+    content: '★ 4,9 | 474+ avaliações | desde 2014';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #111111;
+    color: white;
+    text-align: center;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    z-index: 1002;
+    line-height: 1;
   }
 
+  /* ==========================================
+     2. FAIXA TELEFONE/ENDEREÇO (#CC0000)
+     ========================================== */
+  body::after {
+    content: '📞 (31) 99930-4426 · Av. Vilarinho, 3741';
+    position: fixed;
+    top: 32px;
+    left: 0;
+    right: 0;
+    background-color: #CC0000;
+    color: white;
+    text-align: center;
+    padding: 8px 16px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 1002;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Deslocar o corpo para baixo para acomodar as faixas fixas */
+  body {
+    margin-top: calc(var(--header-height) + 64px) !important;
+  }
+
+  /* ==========================================
+     3. HEADER STICKY
+     ========================================== */
   .header {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
     height: 60px;
+    background-color: white;
+    border-bottom: 1px solid #F0F0F0;
+    z-index: 1000;
+    padding: 0;
+  }
+
+  .header__content {
+    padding: 0 var(--spacing-md);
+    height: 60px;
+  }
+
+  .header__logo a {
+    font-size: 1.25rem;
   }
 
   .header__menu-toggle {
@@ -2607,21 +2669,494 @@ body::after {
   }
 
   .btn-whatsapp {
-    order: 3;
-    gap: var(--spacing-xs);
-    padding: var(--spacing-xs) var(--spacing-md);
-    font-size: 0.85rem;
-  }
-
-  .btn-whatsapp span {
     display: none;
   }
 
-  .btn-whatsapp svg {
-    width: 22px;
-    height: 22px;
+  /* ==========================================
+     4. HERO SIMPLIFICADO
+     ========================================== */
+  .hero {
+    height: 50vh;
+    margin-top: 0;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
   }
 
+  .hero__slider {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .hero__slide-background::before {
+    background: rgba(0, 0, 0, 0.65);
+  }
+
+  .hero__slide-placeholder {
+    position: absolute;
+    bottom: 80px;
+    left: 16px;
+    right: auto;
+    text-align: left;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .hero__slide-placeholder p {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0;
+    max-width: 90%;
+    color: white;
+    line-height: 1.2;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .hero__arrow {
+    display: none;
+  }
+
+  .hero__dots {
+    bottom: 80px;
+  }
+
+  /* ==========================================
+     5. FAIXA 3 CTAs (Ligar, WhatsApp, Local)
+     ========================================== */
+  .hero__action {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    padding: 0;
+    z-index: 10;
+    margin: 0;
+    transform: none;
+    height: auto;
+  }
+
+  .hero__action .btn {
+    border-radius: 0;
+    padding: 14px 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100%;
+    min-height: 48px;
+    box-shadow: none;
+    transition: all 0.2s ease;
+  }
+
+  .hero__action .btn:nth-child(1) {
+    background-color: #111111;
+    color: white;
+  }
+
+  .hero__action .btn:nth-child(1):hover {
+    background-color: #222222;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero__action .btn:nth-child(2) {
+    background-color: #25D366;
+    color: white;
+  }
+
+  .hero__action .btn:nth-child(2):hover {
+    background-color: #1ebd57;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .hero__action .btn:nth-child(3) {
+    background-color: white;
+    color: #111111;
+    border: 2px solid #CC0000;
+    border-radius: 0;
+  }
+
+  .hero__action .btn:nth-child(3):hover {
+    background-color: #f5f5f5;
+    box-shadow: inset 0 0 10px rgba(204, 0, 0, 0.2);
+  }
+
+  .hero__action .btn::after {
+    display: none;
+  }
+
+  /* ==========================================
+     6. SERVIÇOS UNIFICADA (Mecânica, Pneus, Ofertas)
+     ========================================== */
+  .servicos {
+    padding: 32px 0 !important;
+  }
+
+  .servicos__header {
+    margin-bottom: 20px;
+  }
+
+  .servicos__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .servicos__grid > .service-card:nth-child(n+3) {
+    display: none;
+  }
+
+  .service-card {
+    padding: 16px 12px;
+    min-height: auto;
+  }
+
+  .service-card__icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+  }
+
+  .service-card h3 {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+  }
+
+  .service-card p {
+    font-size: 0.85rem;
+  }
+
+  .servicos__footer {
+    text-align: center;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+  }
+
+  .servicos__footer .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  /* PNEUS NACIONAIS */
+  .ofertas-pneus-nacionais {
+    padding: 32px 0 !important;
+  }
+
+  .ofertas-pneus-nacionais .ofertas__header {
+    margin-bottom: 20px;
+  }
+
+  .ofertas-pneus-nacionais .ofertas__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .ofertas-pneus-nacionais .oferta__card:nth-child(n+3) {
+    display: none;
+  }
+
+  /* OFERTAS DE PNEUS */
+  .ofertas-pneus {
+    padding: 32px 0 !important;
+  }
+
+  .ofertas-pneus .ofertas__header {
+    margin-bottom: 20px;
+  }
+
+  .ofertas-pneus .ofertas__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .ofertas-pneus .oferta__card:nth-child(n+3) {
+    display: none;
+  }
+
+  /* ==========================================
+     7. PEÇAS - Imagem gradient + Card preto com diferenciais
+     ========================================== */
+  .pecas {
+    padding: 32px 0 !important;
+  }
+
+  .pecas__header {
+    margin-bottom: 20px;
+  }
+
+  .pecas__content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .pecas__image {
+    order: -1;
+  }
+
+  .image-placeholder {
+    height: 280px;
+    background: linear-gradient(135deg, #CC0000 0%, #111111 100%);
+    border-radius: 8px;
+  }
+
+  .pecas__benefits {
+    background-color: #111111;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    gap: 12px;
+  }
+
+  .benefits__list {
+    gap: 12px;
+  }
+
+  .benefits__item {
+    font-size: 0.95rem;
+    color: #ddd;
+  }
+
+  .pecas__grid {
+    display: none;
+  }
+
+  .pecas__action {
+    display: none;
+  }
+
+  .pecas__categories {
+    display: none;
+  }
+
+  /* ==========================================
+     8. DIFERENCIAIS - 2 COLUNAS
+     ========================================== */
+  .diferenciais {
+    padding: 32px 0 !important;
+  }
+
+  .diferenciais {
+    background-color: #111111 !important;
+  }
+
+  .diferenciais__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .diferenciais__card {
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-top: 1px solid var(--color-primary);
+  }
+
+  .diferenciais__icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 12px;
+  }
+
+  .diferenciais__card-title {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  .diferenciais__card-description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .diferenciais__action {
+    padding-top: 16px;
+  }
+
+  .diferenciais__action .btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  /* ==========================================
+     9. LOCALIZAÇÃO - MAPA + INFO CENTRALIZADA
+     ========================================== */
+  .localizacao {
+    padding: 32px 0 !important;
+  }
+
+  .localizacao .section-title {
+    margin-bottom: 20px;
+  }
+
+  .localizacao__map {
+    height: 350px;
+    margin-bottom: 20px;
+  }
+
+  .localizacao__info {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .localizacao__unit {
+    background-color: var(--color-gray-light);
+    padding: 16px;
+    border-radius: 8px;
+    border-left: 4px solid var(--color-primary);
+    text-align: center;
+  }
+
+  .localizacao__label {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  .localizacao__value {
+    color: var(--color-dark);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .localizacao__action {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .localizacao__action .btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+
+  /* ==========================================
+     10. RODAPÉ - CENTRALIZADO
+     ========================================== */
+  .footer {
+    padding: 32px 0 !important;
+  }
+
+  .footer__content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .footer__column {
+    text-align: center;
+  }
+
+  .footer__social {
+    justify-content: center;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer__links-bottom {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  /* ==========================================
+     11. BOTÕES FLUTUANTES
+     ========================================== */
+  .floating-whatsapp {
+    bottom: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    z-index: 999;
+  }
+
+  .floating-whatsapp::before,
+  .floating-whatsapp::after {
+    width: 48px;
+    height: 48px;
+  }
+
+  .floating-whatsapp svg {
+    width: 24px;
+    height: 24px;
+  }
+
+
+  /* ==========================================
+     AVALIAÇÕES MOBILE
+     ========================================== */
+  .avaliacoes {
+    padding: 32px 0 !important;
+  }
+
+  .avaliacoes__header {
+    margin-bottom: 20px;
+  }
+
+  .avaliacoes__rating-container {
+    margin-bottom: 20px;
+  }
+
+  .avaliacoes__rating {
+    padding: 16px 20px;
+    border: 2px solid var(--color-primary);
+  }
+
+  .avaliacoes__score {
+    font-size: 1.75rem;
+  }
+
+  .avaliacoes__stars {
+    font-size: 1rem;
+  }
+
+  .avaliacoes__card {
+    padding: 14px;
+  }
+
+  .avaliacoes__text {
+    font-size: 0.9rem;
+  }
+
+  .avaliacoes__cta {
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .avaliacoes__cta-text {
+    font-size: 1.1rem;
+  }
+
+  /* ==========================================
+     GERAL MOBILE
+     ========================================== */
   h1 {
     font-size: 1.75rem;
   }
@@ -2635,163 +3170,36 @@ body::after {
     margin-bottom: 24px;
   }
 
-  .servicos__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+  .container {
+    padding: 0 var(--spacing-md);
   }
 
-  .pecas__content {
-    grid-template-columns: 1fr;
+  .oferta__card {
+    padding: 12px;
+    min-height: auto;
   }
 
-  .pecas__grid,
-  .pneus__grid {
-    grid-template-columns: repeat(2, 1fr);
+  .oferta__image {
+    height: 120px;
   }
 
-  .diferenciais__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+  .oferta__image svg {
+    width: 90px;
+    height: 90px;
   }
 
-  .ofertas__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .footer__content {
-    grid-template-columns: 1fr;
-  }
-
-  .footer__bottom {
-    flex-direction: column;
-    gap: var(--spacing-md);
-    text-align: center;
-  }
-
-  .pneus__logo {
-    min-height: 120px;
-    font-size: 0.9rem;
-  }
-
-  .pneus__subtitle {
+  .oferta__title {
     font-size: 1rem;
   }
 
-  .diferenciais__card {
-    padding: var(--spacing-md);
+  .oferta__price-value {
+    font-size: 1.5rem;
   }
 
-  .diferenciais__icon {
-    width: 60px;
-    height: 60px;
-  }
-
-  .diferenciais__card-title {
-    font-size: 1rem;
-  }
-
-  .diferenciais__card-description {
-    font-size: 0.9rem;
-  }
-
-  .diferenciais__subtitle {
-    font-size: 1rem;
-  }
-
-  .service-card h3 {
-    font-size: 1rem;
-  }
-
-  .service-card p {
-    font-size: 0.9rem;
-  }
-
-  .pecas__content {
-    grid-template-columns: 1fr;
-  }
-
-  .pecas__image {
-    order: -1;
-  }
-
-  .image-placeholder {
-    height: 300px;
-  }
-
-  .pecas__benefits {
-    order: 1;
-  }
-
-  .localizacao__content {
-    grid-template-columns: 1fr;
-  }
-
-  .localizacao__info {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  .localizacao__map {
-    height: 400px;
-  }
-
-  .info__card {
-    padding: var(--spacing-md);
-  }
-
-  .hero {
-    height: 70vh;
-  }
-
-  .hero__arrow {
-    width: 40px;
-    height: 40px;
-  }
-
-  .hero__arrow--prev {
-    left: var(--spacing-md);
-  }
-
-  .hero__arrow--next {
-    right: var(--spacing-md);
-  }
-
-  .hero__arrow svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .hero__title {
-    font-size: 2.25rem;
-  }
-
-  .hero__subtitle {
-    font-size: 1rem;
-  }
-
-  .hero__buttons {
-    flex-direction: column;
+  .oferta__button {
     width: 100%;
-    max-width: 400px;
-  }
-
-  .hero__dots {
-    bottom: var(--spacing-md);
-    gap: var(--spacing-md);
-  }
-
-  .hero__dot {
-    width: 30px;
-  }
-
-  .hero__dot.active {
-    width: 50px;
-  }
-
-  .hero__stats-container {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 16px 20px;
-    gap: var(--spacing-md);
+    padding: 8px 12px;
+    font-size: 0.9rem;
   }
 
   section {
